@@ -1,0 +1,17 @@
+.linkButton{
+    color: black;
+    text-decoration: none
+}
+
+button{
+    margin-bottom: 3%;
+    margin-top: 4%;
+    font-size: 17px;
+    padding: 10px 10px;
+    border-radius: 7px;
+    margin-left: 44%;
+}
+
+.titleList{
+    margin-top: 3%
+}

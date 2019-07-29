@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React , {Component} from 'react';
+import {BrowserRouter , Link , Route} from "react-router-dom";
+import "./App.css";
+import Home from "./Home/Home";
+import Leaderboards from "./Leaderboards/Leaderboards";
+import AllTitles from "./All titles/AllTitles"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <div className="nav">
+            <div className="links">
+              <Link to = "/home" className = "link"> Home </Link>
+              <Link to = "/leaderboards" className = "link"> Leaderboards </Link>
+              <Link to = "/alltitles" className = "link"> All titles </Link>
+            </div>
+          </div>
+          <Route path = "/home" exact component = {Home}/>
+          <Route path = "/leaderboards" exact component = {Leaderboards}/>
+          <Route path = "/alltitles" exact component = {AllTitles}/>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
